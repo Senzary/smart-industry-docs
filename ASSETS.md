@@ -67,7 +67,7 @@ const fields = {
         required: true,
         description: "alpahnumerical value uniquely identifying this person in the client's context.",
         editableAfterCreation: false
-    }
+    },
     firstName: {
         type: "string",
         required: true,
@@ -108,7 +108,7 @@ const thresholds = {
         units: {
             metric: "m",
             imperial: "in",
-        }
+        },
         description: "water table depth value that requires a critical alarm for low leves in monitoring well."
     },
     warningWTD: {
@@ -133,7 +133,7 @@ const kpis = {
     WTD: {
         name: "Water Table Depth",
         description: "it is the distance from surface level to water table; it grows as water level lowers and viceversa.",
-        method: "it is calculated using the sensor's depth attribute, set on installation and updated by the client when manually recalibrating the sensor on site, and the level measurement from a submerged level sensor; formula is sensor's depth - sensor level reading, where sensor level reading is the distance from the submerged sensor to the water table."
+        method: "it is calculated using the sensor's depth attribute, set on installation and updated by the client when manually recalibrating the sensor on site, and the level measurement from a submerged level sensor; formula is sensor's depth - sensor level reading, where sensor level reading is the distance from the submerged sensor to the water table.",
         observations: "when negative it is assumed that the monitoring well surface is flooded." 
     }
 };
@@ -249,4 +249,5 @@ these are asset templates usually closer to the business as they determine speci
 
 | timestamp | author | changes |
 | :-: | :- | :- |
-| 2024-10-15T02:22:41.425Z | @ernestomedinam | creates repo & ASSET.md file |
+| 2024-10-15T02:22:41.425Z | @ernestomedinam | creates repo & ASSET.md file. |
+| 2024-10-15T16:49:16.228Z | @ernestomedinam | updates some styling on code bits. |
