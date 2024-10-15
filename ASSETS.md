@@ -49,7 +49,7 @@ so, the proposed way to do it as a patch to move forward to version 1.99 is to d
 
 ## 🏭 asset template proposal
 
-the idea is to build assets that serve as template for future assets to be created.
+the idea is to build assets that serve as template for future assets to be created; these asset templates will be created by senzary staff as part of an use case creation process.
 
 every asset we create will have a nature (what we have used for asset profiling: region, location, area, machine), and a `templateId` which references the assetTemplate it is based on.
 
@@ -171,9 +171,9 @@ in order to maintain consistency with the current asset profile strategy, there 
 
 the following tables contain examples for asset templates per asset nature (type) for the current proposal for patch `v1.99`.
 
-### 🌎 regions
-
 -----
+
+### 🌎 regions
 
 additional geographical abstraction for specific cases in which the client requires another layer to group locations by; regions contains locations; regions may also contain other regions.
 
@@ -188,9 +188,9 @@ regions are not required for smart industries customers, this is an optional add
 
 > note: regions was an abstraction recently added specifically to support AES data centers structure for the navigation dashboard that shows countries (regions) that may have several locations (facilities) that may have several areas (floors, areas...) with the data rooms that are the main asset and take the spot of machines for that use case.
 
-### 🏦 locations
-
 -----
+
+### 🏦 locations
 
 asset templates to represent locations as geographic objects (similar to regions) or specific buiilding types; locations are required for smart industries customers.
 
@@ -202,9 +202,9 @@ asset templates to represent locations as geographic objects (similar to regions
 | Power Plant | latitude, longitude, writtenAddress, perimeter, frontalImage, ... | minActiveGenerators, ... | unplannedDowntimePerPeriod, ... |
 | Distribution Center | latitude, longitude, writtenAddress, perimeter, frontalImage, ... | maxInTransitUnitCount, ... | incomingUnitsPerPeriod, outGoingUnitsPerPeriod, meanUnitTransitTime, ... |
 
-### ⏹ areas
-
 -----
+
+### ⏹ areas
 
 asset templates to represent a physical or virtual space inside locations so that they contain or relate to assets; areas are required for smart industries customers.
 
@@ -215,9 +215,9 @@ asset templates to represent a physical or virtual space inside locations so tha
 | Layout Zone | perimeterXY, bssIds, wifissIds, floorMapImage, isHazardous ... | maxPeopleCount, minPeopleCount (queues?), maxVehicleCount, minVehicleCount (load balancing?), ... | occupancyPerPeriod, emptyVsNotEmptyPeriodRatio, ... |
 | Map Geofence | perimeter, transitCostPerPeriod, ... | maxSpeedAllowed, maxVehicleCount, ... | vehicleCountPerPeriod, ... |
 
-### ⛽ machines
-
 -----
+
+### ⛽ machines
 
 these are asset templates usually closer to the business as they determine specific kpi's based on telemetry from sensors assigned to them; machines are also required for smart industries customers.
 
@@ -229,6 +229,8 @@ these are asset templates usually closer to the business as they determine speci
 | High Pressure Pump | model, enginePower, isoStandard, isoClass, ... | maxAnomalyRate, ... | hoursOperativeSinceLastService, hoursAnomalyVsNormalRatio, ... |
 | Monitoring Well | sensorDepth, latitude, longitude, altitude, ... | warningWTD, maxWTD, ... | WTD, WTDPeaksPerPeriod, ... |
 
+-----
+
 ## ⏭ next steps
 
 - approve asset template patch for version `v1.99`
@@ -236,6 +238,8 @@ these are asset templates usually closer to the business as they determine speci
 - test user is able to create characterized assets for power management customers
 - plan & merge for this patch to production Main Dashbaord 
 - plan & migrate use cases to use asset templates
+
+-----
 
 ## 👀 changelog
 
