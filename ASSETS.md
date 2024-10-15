@@ -21,13 +21,17 @@ in iotlogiq, an asset represents an entity that has business value, whether beca
 
 currently, asset types and devices relate in the following manner:
 
-`Region` 1---contains--->n `Location` 
+- `Company` 1---locationToCompany--->n `Location`
+- `Location` 1---areaToLocation--->n `Area` 
+- `Area` 1---machineToArea--->n `Machine` 
+- `Machine` 1---deviceToMachine--->n `Device`
 
-`Location` 1---areaToLocation--->n `Area` 
+recently a region asset type was added for a specific use case, based on `Contains` relations; it was implemented as an isolated case and its addition had no impact on current production services.
 
-`Area` 1---machineToArea--->n `Machine` 
+- `Company` 1---contains--->n `Region`
+- `Region` 1---contains--->n `Region`
+- `Region` 1---contains--->n `Location`
 
-`Machine` 1---deviceToMachine--->n `Device`
 
 > note: for version 2.0 relationships should be more flexible and based on generic Contains and Manage relationships; if automated, user/userGroups scope may be based on a new type of relation.
 
