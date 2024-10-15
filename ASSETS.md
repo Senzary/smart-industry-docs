@@ -55,7 +55,7 @@ so, the proposed way to do it as a patch to move forward to version 1.99 is to d
 
 the idea is to build assets that serve as template for future assets to be created; these asset templates will be created by senzary staff as part of an use case creation process.
 
-every asset we create will have a nature (what we have used for asset profiling: region, location, area, machine), and a `templateId` which references the assetTemplate it is based on.
+every asset an user creates (or that we create for an user) will have a nature (what we have used for asset profiling: region, location, area, machine), and a `templateId` which references the assetTemplate it is based on.
 
 these assets templates will hold a `fields` dictionary with information about each property that makes sense for this specific asset type from a business and functional perspective.
 
