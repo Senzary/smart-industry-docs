@@ -216,7 +216,6 @@ asset templates to represent a physical or virtual space inside locations so tha
 | :-: | :- | :- | :- | 
 | Building Floor | floorNumber, totalArea, hasElevatorAccess, hasStairCaseAcces, isRoof, isBasement, ... | maxPeopleCount, ... | peopleCountPerPeriod, emptyVsNonEmptyPeriodRatio, ... |   
 | Parking Lot | vehicleTypes, slotsPerVehicleType, pricePerHour (perVehicleType), ... | maxVehiclesPerType, maxStayPerVehicleType, ... | occupancyPerPeriod, incomePerPeriod, incomePerVehicleType, ... | 
-| Layout Zone | perimeterXY, bssIds, wifissIds, floorMapImage, isHazardous ... | maxPeopleCount, minPeopleCount (queues?), maxVehicleCount, minVehicleCount (load balancing?), ... | occupancyPerPeriod, emptyVsNotEmptyPeriodRatio, ... |
 | Map Geofence | perimeter, transitCostPerPeriod, ... | maxSpeedAllowed, maxVehicleCount, ... | vehicleCountPerPeriod, ... |
 
 -----
@@ -232,6 +231,7 @@ these are asset templates usually closer to the business as they determine speci
 | Person | firstName, lastName, role, identification, ... | ... | timeSpentOnAreaPerPeriod, movingVsStaticRatio, ... | 
 | High Pressure Pump | model, enginePower, isoStandard, isoClass, ... | maxAnomalyRate, ... | hoursOperativeSinceLastService, hoursAnomalyVsNormalRatio, ... |
 | Monitoring Well | sensorDepth, latitude, longitude, altitude, ... | warningWTD, maxWTD, ... | WTD, WTDPeaksPerPeriod, ... |
+| Layout Zone | perimeterXY, bssIds, wifissIds, floorMapImage, isHazardous ... | maxPeopleCount, minPeopleCount (queues?), maxVehicleCount, minVehicleCount (load balancing?), ... | occupancyPerPeriod, emptyVsNotEmptyPeriodRatio, ... |
 
 -----
 
