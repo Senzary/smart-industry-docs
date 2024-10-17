@@ -235,9 +235,54 @@ these are asset templates usually closer to the business as they determine speci
 
 -----
 
+## 🆔 how assets naming should work
+
+in thingsboard an entity type name is not its entityId, but it is an unique identifier in the scope of such entity type.
+
+this means you cannot have two assets with the same name, nor two devices with the same name; but you can have a device and an asset have the same name.
+
+regarding assets we have realized that we need names to be unique identifiers for a customer's asset, whether it is a region, a location, an area, or a machine; hence we've come up with the timestamp solution, so to "fool" the system and use the name field as a name, instead of what thingsboard expects it to be: a unique identifier for assets.
+
+### 🔖 proposed asset naming strategy for v1.99
+
+entity name will be used as a unique identifier that does not need to be legible but instead provide information in short format.
+
+    name = <customerCode>-<templateLabel>-<templateCount>
+
+where:
+
+    customerCode: 
+    a n-length string customer attribute fixed by senzary on customer creation. e.g.: aes (for AES), shl (for Shell), iac (for IAC), apx (for Apex), and so on.  
+
+    templateLabel:
+    a lowercased version of the template's name, without the template keyword. e.g.: person (for person-template), truck (for truck-template), and so on.
+
+    templateCount:
+    is how many assets related to this template the customer currently has, plus 1.
+
+entity label will be used as a legible name for a specific asset, though it does not need to be unique.
+
+    label = "Legible name chosen by user"
+
+so before and after would be:
+
+```js
+// as is today
+const entityName = "1711212491 Plant Manager";
+const entityLabel = "Plant Manager";
+
+// to be
+const entityName = "aes-person-8";
+const entityLabel = "Plant Manager #12142";
+```
+
+> 👀 keep in mind this would mean eventually dashboards have to start relying on labels more than names; this means we have to prepare this migration process...
+
+-----
+
 ## ⏭ next steps
 
-- approve asset template patch for version `v1.99`
+- ✅ approve asset template patch for version `v1.99`
 - create asset templates for aramark upcoming demo (office building/plant, building floors, electrical panels) as test case to implement updates to Main Dashboard
 - test user is able to create characterized assets for power management customers
 - plan & merge for this patch to production Main Dashbaord 
@@ -251,3 +296,4 @@ these are asset templates usually closer to the business as they determine speci
 | :-: | :- | :- |
 | 2024-10-15T02:22:41.425Z | @ernestomedinam | creates repo & ASSET.md file. |
 | 2024-10-15T16:49:16.228Z | @ernestomedinam | updates some styling on code bits. |
+| 2024-10-17T18:54:13.061Z | @ernestomedinam | adds asset naming proposal. |
