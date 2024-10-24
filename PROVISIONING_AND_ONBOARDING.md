@@ -12,13 +12,13 @@ refers to integrating an entity into a system, which means shaping and fitting t
 
 ## 🔖 content
 
-1. [🧬 types of entities to provision & onboard](#🧬-types-of-entities-to-provision--onboard)
-2. [🚀 device provisioning](#🚀-device-provisioning)
-3. [🎁 device onboarding before shipping](#🎁-device-onboarding-before-shipping)
-4. [🚚 onboarding on shipping](#🚚-onboarding-on-shipping)
-5. [📩 onboarding on hardware reception on client site](#📩-onboarding-on-installation-on-client-site)
-6. [🔧 onboarding on installation on client site](#🔧-onboarding-on-installation-on-client-site)
-7. [🏭 asset onboarding before shipping](#🏭-asset-onboarding-before-shipping)
+1. [🧬 types of entities to provision & onboard](#-types-of-entities-to-provision--onboard)
+2. [🚀 device provisioning](#-device-provisioning)
+3. [🎁 device onboarding before shipping](#-device-onboarding-before-shipping)
+4. [🚚 onboarding on shipping](#-onboarding-on-shipping)
+5. [📩 onboarding on hardware reception on client site](#-onboarding-on-installation-on-client-site)
+6. [🔧 onboarding on installation on client site](#-onboarding-on-installation-on-client-site)
+7. [🏭 asset onboarding before shipping](#-asset-onboarding-before-shipping)
 
 -----
 
