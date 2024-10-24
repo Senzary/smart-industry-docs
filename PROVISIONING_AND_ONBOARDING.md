@@ -19,6 +19,7 @@ refers to integrating an entity into a system, which means shaping and fitting t
 5. [📩 onboarding on hardware reception on client site](#-onboarding-on-installation-on-client-site)
 6. [🔧 onboarding on installation on client site](#-onboarding-on-installation-on-client-site)
 7. [🏭 asset onboarding before shipping](#-asset-onboarding-before-shipping)
+8. [🔗 resources](#-resources)
 
 -----
 
@@ -72,7 +73,7 @@ before sending a device to a customer or end user it must be contextualized, or 
 
 - tag for templateId if template did not exist when device was provisioned `templateId:<device-template-id>`
 - tag for device groups, whether through several `group:this-group` or one `groups:this-group,that-group`, ideally using kebab-case syntax
-- tag for customer code `customer:<customer-code>` which should be an attribute of the customer entity on Thingsboard, ideally 3-5 numbers/letters with kebab-case syntax; e.g.: `customer:shell` `customer:aes` `customer:jax
+- tag for customer code `customer:<customer-code>` which should be an attribute of the customer entity on Thingsboard, ideally 3-5 numbers/letters with kebab-case syntax; e.g.: `customer:shell` `customer:aes` `customer:jax`
 - list of configuration fields based on device-template with default values for this device; e.g.: for all devices, `reportInterval` should be defined; e.g.: for a submergible level sensor, `range` is needed as a manufacturing value 
 
 this process should be similar to the previous one as it should also be possible to run it for a batch of devices.
@@ -125,3 +126,7 @@ after installing the device & updating its administrative status to `operative` 
 similar to device onboarding before shipping, this process consists on creating and characterizing every asset out customer's end users will require in order to provide administrative structure and business logic to their smart industry solutions.
 
 > note: 🚧 Work in progress @ernestomedinam.
+
+## 🔗 resources
+
+1. [diagrams on draw.io](https://drive.google.com/file/d/1ebPrsc_xBOc4PTnb4uB9ddq7Oij5tWX5/view?usp=sharing)
