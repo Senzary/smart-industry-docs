@@ -130,3 +130,11 @@ similar to device onboarding before shipping, this process consists on creating 
 ## 🔗 resources
 
 1. [diagrams on draw.io](https://drive.google.com/file/d/1ebPrsc_xBOc4PTnb4uB9ddq7Oij5tWX5/view?usp=sharing)
+
+-----
+
+## 👀 changelog
+
+| timestamp | author | changes |
+| :-: | :- | :- |
+| 2024-10-28T21:11:27.673Z | @ernestomedinam | adds changelog to PROVISIONING_AND_ONBOARDING.md file. |

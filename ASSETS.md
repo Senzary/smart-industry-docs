@@ -294,6 +294,6 @@ const entityLabel = "Plant Manager #12142";
 
 | timestamp | author | changes |
 | :-: | :- | :- |
-| 2024-10-15T02:22:41.425Z | @ernestomedinam | creates repo & ASSET.md file. |
-| 2024-10-15T16:49:16.228Z | @ernestomedinam | updates some styling on code bits. |
-| 2024-10-17T18:54:13.061Z | @ernestomedinam | adds asset naming proposal. |
+| 2024-10-17T18:54:13.061Z | @ernestomedinam | adds asset naming proposal |
+| 2024-10-15T16:49:16.228Z | @ernestomedinam | updates some styling on code bits |
+| 2024-10-15T02:22:41.425Z | @ernestomedinam | creates repo & ASSET.md file |

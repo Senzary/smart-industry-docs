@@ -75,3 +75,11 @@ SubmergibleSensorTemplate.serverAttributes.configuration = configurationFields;
 ```
 
 > note: 🚧 Work in progress @ernestomedinam.
+
+-----
+
+## 👀 changelog
+
+| timestamp | author | changes |
+| :-: | :- | :- |
+| 2024-10-28T21:11:27.673Z | @ernestomedinam | adds changelog to DEVICES.md file. |
