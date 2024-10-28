@@ -60,6 +60,8 @@ because we would not be able to stop using the current integration, named someth
 
 > note: 👀 in any case, the description field for a new integration must be filled with useful information about the reason why the integration is being created.
 
+-----
+
 ## 📐 integration naming rules
 
 up to this point, you might have noticed some integration names have spaces, some have capitalized words, some don't. 
