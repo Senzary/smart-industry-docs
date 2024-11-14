@@ -29,7 +29,8 @@ refers to integrating an entity into a system, which means shaping and fitting t
 
 | process | where | who | when | how | in status | out status |
 | :-- | :--: | :-- | :-- | :-- | :--: | :--: |
-| provisioning | Thingpark | Sz staff | hardware reception | batch process on junction dashboard based on templates | NA | `provisioned` |
+| provisioning | Smart industry | Zoho through Senzary API Manager | hardware purchased | http request sent from Zoho on purchase order update if device EUI, appKey & joinEUI are known | NA | `shipped-to-senzary` or `shipped-to-partner` | 
+| provisioning | Thingpark | Sz staff or Partner through Thingsboard | hardware reception | batch process on junction dashboard based on templates | `shipped-to-senzary` or `shipped-to-partner` | `provisioned` |
 | onboarding | Thingpark & Thingsboard | Sz staff | before shipping | batch process on junction dashboard based on templates | `provisioned` | `not-shipped` |
 | onboarding | Zoho & Thingsboard | Sz staff | on shipping | Zoho to Thingsboard api request | `not-shipped` | `shipped` |
 | onboarding | Thingsboard | End user | hardware reception | wizard with QR claim process | `shipped` | `connected` |
