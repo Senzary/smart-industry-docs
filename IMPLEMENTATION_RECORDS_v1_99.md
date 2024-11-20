@@ -17,6 +17,7 @@ interface Customer {
     // e.g.: aesglobal, aespanama, mgadist... 
     customerCode: string;
     groups: CustomerGroups[];
+    isotypeUrl?:: string,
     allowWhiteLabel?: boolean;
     parentCustomerId?: string;
     description?: string;
@@ -72,35 +73,46 @@ we've added a set of provisioning assets as required by the desire to incorporat
 
 for this we have added an asset type `provisioning` that has two templates thus far:
 
-- `bundle-template` in order to represent a set of devices that are to be sent to a customer's location
-
 - `package-template` in order to represent a box with devices that belong to a bundle and may be sent in shipments along with other packages
 
 - `shipment-template` in order to represent a shipment as a set of packaged sent together to a final address
 
+we've also implemented an asset type `bundle` and a `data-room-bundle-template` of such type in order to represent a set of devices that are to be sent to a customer's location.
+
 ```js
 // what a bundle would look like
-const bundleFields = {
-    "name": { // '<customerCode>-<bundle-kit>-<int>
-        "type": "string", 
-        "description": "name for a bundle related to a customer location.",
+// <customerCode>-bundle-<token_hex(16)>  
+dataRoomBundleEntity.name = "mgadist-bundle-f9bf78b9a18ce6d46a0cd2b0b86df9da"; 
+const dataRoomBundleFields = {
+    "displayName": {
+        "type": "string",
+        "description": "human readable name for this bundle",
         "required": true
-    }
-    "kit": {
-        "type": "string", // data-room, rest-room,
-        "description": "name for kit this bundle is based on; this allows bundle to know what type of devices it requires."
+    },
+    "template": {
+        "type": "string", // data-room-bundle-template
+        "description": "complete name for this bundle template; this allows bundle to know what type of devices it requires.",
+        "required": true
     },
     "status": {
-        "type": "string", // pending, partial, complete
+        "type": "enum",
+        "enumOptions": ["pending", "partial", "complete"],
         "description": "status for this bundle regarding number of devices already shipped to client.",
-        "required": true,
         "editable": true,
-        "default": "pending"
+        "default": {
+            "value": "pending"
+        },
     },
-    "deviceTypes": {
+    "devices": {
         "type": "json",
-        "description": "an array of json objects describing deviceType and units of type."
-    }
+        "description": "an array of json objects describing deviceType and units of type.",
+        "default": {
+            "value": [{
+                "deviceType": "air-conditions-sensor",
+                "qty": 1
+            }]
+        }
+    },
 };
 const bundleRelations = [{
     "to": "ASSET", // of type package
@@ -137,7 +149,7 @@ const packageFields = {
     },
     "writtenAddres": {
         "type": "string",
-        "description": "address of the location related to bundle that contains this package",
+        "description": "address of the location related to bundle that contains this package"
     }
 };
 const packageRelations = [{
@@ -178,7 +190,7 @@ const shipmentFields = {
     "writtenAddress": {
         "type": "string",
         "description": "written address for this shipment.",
-        "required": true,
+        "required": true
     }
 };
 const shipmentRelations = [{
@@ -187,9 +199,89 @@ const shipmentRelations = [{
 }];
 ```
 
+```js
+// this is facility-template fields, a location
+const facilityFields = {
+    "displayName": {
+        "type": "string",
+        "required": true,
+        "description": "human readable name for this asset."
+    }
+    "latitude": {
+        "type": "number",
+        "description": "for geographical coordinates"
+    },
+    "longitude": {
+        "type": "number",
+        "description": "for geographical coordinates"
+    },
+    "perimeter": {
+        "type": "json",
+        "description": "required in order to show perimeter on map views for this location."
+    },
+    "numberOfFloors": {
+        "type": "number",
+        "description": "how many floors do this facility have."
+    },
+    "writtenAddress": {
+        "type": "string",
+        "description": "written address for this location."
+    },
+    "commercialImageUrl": {
+        "type": "string",
+        "description": "an url to an image that shows this facility."
+    },
+    "floorPlanUrl": {
+        "type": "string",
+        "description": "an url to a floor plan image of this facility."
+    }
+};
+
+```
+
+the creation of a bundle is normalized through the API Manager using an endpoint for bundle resources.
+
+```py
+base_url = "https://127.0.0.1:5000/api/smart-industry/bundles"
+method = "POST"
+body = dict(
+    api="indumetrix",
+    tenant="wesco",
+    template="data-room",
+    # this is mgadist
+    partner_id="8f041160-a1d1-11ef-8f10-1b4ca6fae109", 
+    # example location name from customer aespanama
+    location_name="aespanama-facility-1749942c0918dcdd34ada62acb2a0ff6" 
+)
+```
+
+what happens is:
+- templates are fetched to validate `template`
+- groups for `partner` bundle and entity views are fetched
+- `entiyView` for partner to access customer location is created and added to groups
+- `bundle` is created and its required attributes are updated, in this case `locationEntityViewName` and `template` 
+
+authentication methods are to be implemented to take requests on these endpoints from zoho or thingsboard instances.
+
+### bundle rules
+
+the API Manager request will create the bundle and update its required attributes; once this attributes are updated, then bundle rule chain will take over and do the following:
+
+- relate the bundle to its template (asset bundle `inherits` to asset bundle-template)
+- provision bundle according to default values for non required attributes according to template `fields` attributes (bundle templates seem to just need fields for now, no thresholds)
+- relate the bundle to its entity view of type `customer-location-for-partner` based on `locationEntityViewName` attribute
+
+the name of the created rule chain on indumetrix is `bundle-asset-rules`.
+
+there were a couple of generic rule chains built as well to be reused for other assets:
+
+- `common_relate-asset-to-template`
+- `common_provision-asset-from-template`
+
+
 ## 🚧 WIP
 
-- implement templates & create rule chains for provisioning assets
+- ✅ implement templates & create rule chains for provisioning assets
 - create test location assets for customer based on irl excel file
 - provision test devices & create bundles for partner
 - build partner dashboards (start on bundles view, use wireframe on draw.io)
@@ -202,3 +294,4 @@ const shipmentRelations = [{
 | timestamp | author | changes |
 | :-: | :- | :- |
 | 2024-11-14T01:05:26.116Z | @ernestomedinam | creates IMPLEMENTATION_RECORDS_v1_99.md file. |
+| 2024-11-20T17:06:53.215Z | @ernestomedinam | updates implementation records after creating bundles. |
