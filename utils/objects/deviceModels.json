@@ -11,7 +11,7 @@
 	"air-conditions-template": [
 		{
 			"manufacturer": "dragino",
-			"model": "lth65n",
+			"model": "lht65n",
 			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/530087937/Dragino+LHT65N+Installation+Guide",
 			"deviceModelPhoto": "https://maker-store.es/media/image/80/6e/d6/A214035-00_600x600@2x.jpg"
 		},
