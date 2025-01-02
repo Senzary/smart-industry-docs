@@ -3,7 +3,7 @@
 		{
 			"manufacturer": "milesight",
 			"model": "ws301",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/530087937/Dragino+LHT65N+Installation+Guide",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/NDk1ZjA3NTIyMmFhNDA1NmI4MDczMjEwM2Q2ZTg5MDE",
 			"deviceModelPhoto": "https://maker-store.es/media/image/80/6e/d6/A214035-00_600x600@2x.jpg"
 		}
 	],
@@ -12,13 +12,13 @@
 		{
 			"manufacturer": "dragino",
 			"model": "lht65n",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/530087937/Dragino+LHT65N+Installation+Guide",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/MDg1MTljOTJkYmUzNDk1M2I5MWQzZGM5OWJiMTBhYTk",
 			"deviceModelPhoto": "https://maker-store.es/media/image/80/6e/d6/A214035-00_600x600@2x.jpg"
 		},
     {
 			"manufacturer": "milesight",
 			"model": "am308l",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/504102913/Milesight+AM308-L+Installation+Guide",
+			"turnOnInstructionsURL": "",
 			"deviceModelPhoto": "https://www.innon.com/cdn/shop/files/AM319L_4_a8ba3d87-2d2f-402c-964e-2861ee05d7e5_400x400.png?v=1705503472"
 		}
 	],
@@ -27,7 +27,7 @@
 		{
 			"manufacturer": "kerlink",
 			"model": "ifemtocell",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/545456129/Kerlink+Wirnet+iFemtocell+Gateway+Installation+Guide",
+			"turnOnInstructionsURL": "",
 			"deviceModelPhoto": "https://iot.zenner.shop/media/d6/7e/fd/1673345311/kerlink_wirnet_ifemtocell_868_mhz_evo.jpg"
 		}
 	],
@@ -37,13 +37,13 @@
 		{
 			"manufacturer": "polysense",
 			"model": "WxS8800-33032",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/531922945/Polysense+WxS8800-33032+Fire+Smoke+and+CO+Sensor+Installation+Guide",
+			"turnOnInstructionsURL": "",
 			"deviceModelPhoto": "https://chirplabs.io/cdn/shop/products/polysense-co-fire-smoke-sensor.jpg?v=1617421790"
 		},
     {
 			"manufacturer": "netvox",
 			"model": "ra02a",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/779780097/Netvox+RA02A+Wireless+Smoke+Detector+Installation+Guide",
+			"turnOnInstructionsURL": "",
 			"deviceModelPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyMHrZ-IIZ_2IBAGQ7MyTiYbNKzKcyNB-Yvg&s"
 		}
 	],
@@ -54,7 +54,7 @@
     {
 			"manufacturer": "milesight",
 			"model": "em300-sld",
-			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/spaces/CUS/pages/513048578/Milesight+EM300-SLD+Installation+Guide",
+			"turnOnInstructionsURL": "",
 			"deviceModelPhoto": "https://shop.marcomweb.it/images/stories/virtuemart/product/em300-sld-product.jpg"
 		}
   ]
