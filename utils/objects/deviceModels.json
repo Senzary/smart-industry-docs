@@ -18,7 +18,7 @@
     {
 			"manufacturer": "milesight",
 			"model": "am308l",
-			"turnOnInstructionsURL": "",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/NTkzMTA5ZmRmZWFiNGQwODhkMzUxODYyMGRlZGVkZjU",
 			"deviceModelPhoto": "https://www.innon.com/cdn/shop/files/AM319L_4_a8ba3d87-2d2f-402c-964e-2861ee05d7e5_400x400.png?v=1705503472"
 		}
 	],
@@ -27,7 +27,7 @@
 		{
 			"manufacturer": "kerlink",
 			"model": "ifemtocell",
-			"turnOnInstructionsURL": "",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/ODMyOThiYzQ0NDI3NDIxZjhjYzc3N2I1OTIxNjU1MGQ",
 			"deviceModelPhoto": "https://iot.zenner.shop/media/d6/7e/fd/1673345311/kerlink_wirnet_ifemtocell_868_mhz_evo.jpg"
 		}
 	],
@@ -37,13 +37,13 @@
 		{
 			"manufacturer": "polysense",
 			"model": "WxS8800-33032",
-			"turnOnInstructionsURL": "",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/ZmJhMzViMzZiZDhmNDMzNDk5MWVmZTY3ZTA2YmJmYTI",
 			"deviceModelPhoto": "https://chirplabs.io/cdn/shop/products/polysense-co-fire-smoke-sensor.jpg?v=1617421790"
 		},
     {
 			"manufacturer": "netvox",
 			"model": "ra02a",
-			"turnOnInstructionsURL": "",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/MjdmNmQwM2YwYWI4NDJmYThlYmEzMjQ3OGEwZjI5Y2Y",
 			"deviceModelPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyMHrZ-IIZ_2IBAGQ7MyTiYbNKzKcyNB-Yvg&s"
 		}
 	],
@@ -54,7 +54,7 @@
     {
 			"manufacturer": "milesight",
 			"model": "em300-sld",
-			"turnOnInstructionsURL": "",
+			"turnOnInstructionsURL": "https://senzary.atlassian.net/wiki/external/YzM3ZTU3ZWYwNDFjNDI3Yjk2YjhiMmY3NjczNjdlNzc",
 			"deviceModelPhoto": "https://shop.marcomweb.it/images/stories/virtuemart/product/em300-sld-product.jpg"
 		}
   ]
